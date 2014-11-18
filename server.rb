@@ -10,7 +10,6 @@ def fei
   week = []
   weekday = []
   page.search('.section.page p').each_with_index do |node, index|
-    p index % 3
     if index % 3 == 0
       week[index/3] = weekday
       weekday = []
@@ -40,10 +39,8 @@ def meatbar
     end
   end
 
-  p week
+  week
 end
-
-meatbar
 
 
 get '/meatbar' do
