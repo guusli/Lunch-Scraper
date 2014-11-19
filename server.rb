@@ -35,7 +35,7 @@ def meatbar
 
     new_line_index = node_text.index(/\n/)
     if new_line_index # no new-line => no food
-      week.push node_text[new_line_index + 1, node_text.length]
+      week.push [node_text[new_line_index + 1, node_text.length]]
     end
   end
 
