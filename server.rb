@@ -1,11 +1,10 @@
 require "mechanize"
 require "sinatra"
 require "json"
-require "redis"
 
 def fei
   mechanize = Mechanize.new
-  redis = Redis.new
+  #redis = Redis.new
 
   page = mechanize.get('http://www.fei.se/nyheter/fei-restaurant-lounge')
 
