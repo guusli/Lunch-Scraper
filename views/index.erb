@@ -10,22 +10,30 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="wrapper">
-    <h1>Dagens Lunch</h1>
-    <div id="menus"></div>
+    <div id="spinner_wrapper"></div>
+    <div class="header box">
+      <h1>Dagens Lunch</h1>
+    </div>
+    <div id="menus" class="menus"></div>
+    <div class="clear"></div>
   </div>
 
-
+  
+  <script src="spin.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
   <script src="index.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.js"></script>
   <script id="menu-template" type="text/x-handlebars-template">
-  <div>
-    <h1>{{name}}</h1>
-    <ul class="body">
+  <div class="menu">
+    <h2>{{name}}</h2>
+    <ul>
       {{#each menu}}
         <li>{{this}}</li>
       {{/each}}
