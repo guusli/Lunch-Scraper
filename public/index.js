@@ -37,7 +37,11 @@ $(document).ready(function() {
 
 
   $('#spinner_wrapper').append($(spinner.el));
-  getFei().then(stopSpinner).then(getGrill).then(getMeatbar).then(getVendelas);
+
+  getFei().then(stopSpinner);
+  getGrill().then(stopSpinner);
+  getMeatbar().then(stopSpinner);
+  getVendelas().then(stopSpinner);
 
 });
 
