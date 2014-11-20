@@ -2,6 +2,9 @@ require "mechanize"
 require "sinatra"
 require "json"
 
+require "dalli"
+require "rack-cache"
+
 def fei
   mechanize = Mechanize.new
   #redis = Redis.new
@@ -104,26 +107,35 @@ def vendelas
   week
 end
 
+set :public_folder, File.dirname(__FILE__) + '/public'
 
+
+get '/' do
+  erb :index
+end
 get '/meatbar' do
+  cache_control :public, max_age: 86400 
   content_type :json, 'charset' => 'utf-8'
   week = meatbar()
   week.to_json
 end
 
 get '/vendelas' do
+  cache_control :public, max_age: 86400 
   content_type :json, 'charset' => 'utf-8'
   week = vendelas()
   week.to_json
 end
 
 get '/grill' do
+  cache_control :public, max_age: 86400 
   content_type :json, 'charset' => 'utf-8'
   week = grill()
   week.to_json
 end
 
 get '/fei' do
+  cache_control :public, max_age: 86400 
   content_type :json, 'charset' => 'utf-8'
   week = fei()
   week.to_json
