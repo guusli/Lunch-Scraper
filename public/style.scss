@@ -1,0 +1,86 @@
+$accent: #E94E77;
+$accent-dark: #D68189;
+$dark: #C6A49A;
+$medium: #C6E5D9;
+$light: #F4EAD5;
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: 'Noto Sans', sans-serif;
+  color: darken($dark,50%);
+  background: $light;
+}
+
+h1 {
+    font: 400 100px/1.5 'Pacifico', Helvetica, sans-serif;
+    font-size: 6em;
+    line-height: 100px;
+    color: darken($accent,20%);
+    text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+}
+ 
+p {
+    line-height: 25px;
+}
+
+.wrapper {
+  background: $light;
+  width: 80%;
+  margin: 0px auto;
+  margin-bottom: 80px;
+}
+
+.menus {
+  margin: 0px auto;
+  overflow: auto;
+  width: 80%;
+}
+
+.menu {
+  margin-top: 40px;
+  ul {
+    background: lighten($light,5%);
+    list-style: none;
+    padding: 20px 10px;
+    margin: 0;
+  }
+}
+
+.menu ul li:first {
+  margin-top: 20px;
+}
+
+.menu ul li {
+  padding: 20px;
+
+}
+
+.box {
+  width: 90%;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.clear {
+  clear: both;
+}
+
+
+
+
+// ========= Media Query ================= //
+
+@media (max-width: 600px) {
+  .wrapper {
+    width: 100%;
+  }
+}
