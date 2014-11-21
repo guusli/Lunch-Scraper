@@ -80,6 +80,7 @@ def grill
 
   week.shift
   week.pop
+  week.shift
   week
 end
 
@@ -113,6 +114,18 @@ set :public_folder, File.dirname(__FILE__) + '/public'
 get '/' do
   erb :index
 end
+
+get '/all' do
+  cache_control :public, max_age: 86400 
+  content_type :json, 'charset' => 'utf-8'
+  week = {}
+  week[:fei] = fei()
+  week[:grill] = grill()
+  week[:meatbar] = meatbar()
+  week[:vendelas] = vendelas()
+  week.to_json
+end
+
 get '/meatbar' do
   cache_control :public, max_age: 86400 
   content_type :json, 'charset' => 'utf-8'
@@ -128,6 +141,7 @@ get '/vendelas' do
 end
 
 get '/grill' do
+  p "========="
   cache_control :public, max_age: 86400 
   content_type :json, 'charset' => 'utf-8'
   week = grill()

@@ -60,7 +60,6 @@ function renderMenu(name, menus) {
   $('#menus').append(html);
 }
 
-
 function getVendelas() {
   return getMenu('vendelas');
 }
